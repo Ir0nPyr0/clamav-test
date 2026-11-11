@@ -1,0 +1,69 @@
+site_name: ES³ Sovereignty Maturity Level (SML) Framework
+site_description: Standardized Criteria Catalog for Measuring Digital Sovereignty of IT Services and Cloud Infrastructures
+site_author: Schwarz Digits / Institute for Cyber Security and Digital Sovereignty
+site_url: https://es3-sml.github.io/es3-sml/
+
+theme:
+  name: material
+  language: en
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.action.edit
+
+extra_css:
+  - stylesheets/custom.css
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:pymdownx.emoji.twemoji
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.arithmatex:
+      generic: true
+  - tables
+  - attr_list
+  - md_in_html
+
+nav:
+  - Home: index.md
+  - Introduction: introduction.md
+  - SML Framework Catalog: schema.md
+  - Sovereignty Dimensions:
+      - SML 1 - Strategic Sovereignty: dimensions/sml1-strategic.md
+      - SML 2 - Legal and Jurisdictional Sovereignty: dimensions/sml2-legal.md
+      - SML 3 - Data Sovereignty: dimensions/sml3-data.md
+      - SML 4 - Operational Sovereignty: dimensions/sml4-operational.md
+      - SML 5 - Supply Chain Sovereignty: dimensions/sml5-supply-chain.md
+      - SML 6 - Technology Sovereignty: dimensions/sml6-technology.md
+      - SML 7 - Security and Compliance Sovereignty: dimensions/sml7-security.md
+      - SML 8 - Environmental Sustainability: dimensions/sml8-environmental.md
+      - SML 9 - AI Sovereignty: dimensions/sml9-ai.md
+  - SML Assessment Tool: sml-assessment.md
+  - Contact & Imprint: contact.md

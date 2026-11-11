@@ -1,0 +1,56 @@
+<!-- ********************************************************************************
+ * Copyright (c) 2026 Schwarz Digits Cloud GmbH & Co. KG
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Creative Commons Attribution-ShareAlike 4.0 International Public License
+ * which is available at https://creativecommons.org/licenses/by-sa/4.0/.
+ *
+ * SPDX-License-Identifier: CC-BY-SA-4.0
+ *
+ * Contributors:
+ *   Andy Riexinger - initial contribution
+ ******************************************************************************* -->
+ 
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>SML Assessment Tool (WebAssembly)</title>
+    <!-- Lädt das CSS direkt von Ihrer eigenen Domain -->
+    <link rel="stylesheet" href="stlite/style.css" />
+    <style>
+      html, body, #root {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background-color: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- Lädt das JS-Triebwerk direkt von Ihrer eigenen Domain -->
+    <script src="stlite/stlite.js"></script>
+    <script>
+      const cacheBust = new Date().getTime();
+
+      stlite.mount({
+        requirements: ["pandas", "plotly", "openpyxl"],
+        entrypoint: "sml_app.py",
+        files: {
+          "sml_app.py": {
+            url: "sml_app.py?cb=" + cacheBust
+          },
+          "sml_data.json": {
+            url: "sml_data.json?cb=" + cacheBust
+          },
+          "assets/SDT_ES3_Logo_4c_neg_RGB.svg": {
+            url: "assets/SDT_ES3_Logo_4c_neg_RGB.svg?cb=" + cacheBust
+          }
+        }
+      }, document.getElementById("root"));
+    </script>
+  </body>
+</html>
